@@ -55,7 +55,7 @@ docs/_build/
 
 #Additional
 .idea/
-.arff/
+mnist_784.arff
 
 # PyBuilder
 target/

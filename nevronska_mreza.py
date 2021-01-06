@@ -51,21 +51,24 @@ class Nevronska_mreza:
 
     def ucenje(self, ucni_podatki, ucni_koeficient, st_epoch, test):
         for epoch in range(st_epoch):
-            napaka = 0
             for podatek in ucni_podatki:
-                izhod = self.razsirjanje_naprej(podatek[:-1])
+                self.izhod = self.razsirjanje_naprej(podatek[:-1])
                 pricakovane_vrednosti = np.zeros(self.st_izhodni)
                 pricakovane_vrednosti[podatek[-1]] = 1
-                napaka += np.sum((pricakovane_vrednosti - izhod)**2)
                 self.povratno_razsirjanje(pricakovane_vrednosti)
                 self.posodobitev_utezi(podatek, ucni_koeficient)
-                pravilno = 0
-                for podatek_t in test:
-                    napoved = self.napovej(podatek_t)
-                    rezultat = podatek_t[-1]
-                    if napoved == rezultat:
-                        pravilno += 1
-            print('>epoch=%d, natančnost=%d, kvadratna_napaka=%.3f' % (epoch, pravilno/len(test), napaka))
+            pravilno = 0
+            napaka = 0
+            for podatek_t in test:
+                izhod = self.razsirjanje_naprej(podatek_t[:-1])
+                pricakovane_vrednosti = np.zeros(self.st_izhodni)
+                pricakovane_vrednosti[podatek_t[-1]] = 1
+                napaka += np.sum((pricakovane_vrednosti - izhod)**2)
+                izhod = list(izhod)
+                napoved = izhod.index(max(izhod))
+                if napoved == podatek_t[-1]:
+                    pravilno += 1
+            print('>epoch=%d, natančnost=%.2f, kvadratna_napaka=%.4f' % (epoch+1, (pravilno/len(test))*100, napaka/len(test)))
 
     def napovej(self, vhod):
         izhod = list(self.razsirjanje_naprej(vhod[:-1]))

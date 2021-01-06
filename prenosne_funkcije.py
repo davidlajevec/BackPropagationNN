@@ -7,11 +7,7 @@ def sigmoid(x, D=False):
     else:
         return x * (1.0 - x)
 
-def tanh(x, D=False):
-    if not D:
-        return np.tanh(x)
-    else:
-        return 1 - x**2
+
 
 
 
