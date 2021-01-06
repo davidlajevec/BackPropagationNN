@@ -16,7 +16,7 @@ Za napoved glede na vhodni podatek z že naučeno mrežo uporabimo:
 <code>mreza.napovej(vhodni_podatek)</code> Pri čemer mora biti vhodni podatek seznam z dolžino 784. 
 
 <h3>Uspešnost</h3>
-Algoritem je bil ovrednoten na podatkovnem naboru [MNIST_784](https://www.openml.org/d/554). Pri tem je bil enkrat uporabljena kot prenosna funkcija uporabljen sigmoid drugič pa tanh. Učni koeficient(ang. [learning_rate](https://en.wikipedia.org/wiki/Learning_rate)) je znašal 3,1. Določen je bil z uporabo metode [Trial and error](https://en.wikipedia.org/wiki/Trial_and_error). V skritem sloju smo imeli 30 nevronov. V tabeli so predstavljeni rezultati za vsak epoch posebej. Testni nabor podatkov, ki je bil preverjen po vsakem epochu je zajemal 20% naključno izbranih podatkov.
+Algoritem je bil ovrednoten na podatkovnem naboru MNIST_784. Pri tem je bil enkrat uporabljena kot prenosna funkcija uporabljen sigmoid drugič pa tanh. Učni koeficient (ang. learning rate) je znašal 3,1. Določen je bil z uporabo metode Trial and error. V skritem sloju smo imeli 30 nevronov. V tabeli so predstavljeni rezultati za vsak epoch posebej. Testni nabor podatkov, ki je bil preverjen po vsakem epochu je zajemal 20% naključno izbranih podatkov.
 
 | epoch | % pravilnih napovedi |   MSE  |
 |:-----:|:--------------------:|:------:|
@@ -48,5 +48,8 @@ Algoritem je bil ovrednoten na podatkovnem naboru [MNIST_784](https://www.openml
 * [https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
 * [https://en.wikipedia.org/wiki/Online_machine_learning](https://en.wikipedia.org/wiki/Online_machine_learning)
 * [https://en.wikipedia.org/wiki/Learning_rate](https://en.wikipedia.org/wiki/Learning_rate)
-*  
+* [MNIST_784 dataset](https://www.openml.org/d/554) 
+* [https://en.wikipedia.org/wiki/Learning_rate](https://en.wikipedia.org/wiki/Learning_rate)
+* [https://en.wikipedia.org/wiki/Trial_and_error](https://en.wikipedia.org/wiki/Trial_and_error)
+
 
