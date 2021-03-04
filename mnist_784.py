@@ -16,8 +16,9 @@ podatki = podatki.T
 
 eta_train_test = 0.2
 np.random.shuffle(podatki)
+podatki, po = np.split(podatki, [int(len(podatki)*0.01)])
 test, train =  np.split(podatki, [int(len(podatki)*eta_train_test)])
 
 moja_mreza = Nevronska_mreza(784, 30, 10)
-moja_mreza.ucenje(train, 3.1, 30, test)
+moja_mreza.ucenje(train, 1, 30, test)
 
